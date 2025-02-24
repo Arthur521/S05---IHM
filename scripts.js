@@ -11,6 +11,7 @@ const armarios = [
   { id: 6, formato: "duplo", status: true, acessivel: true, dataHora: 0, dataHoraEntrega: 0 },
   { id: 7, formato: "duplo", status: false, acessivel: true, dataHora: 0, dataHoraEntrega: 0 },
   { id: 8, formato: "duplo", status: false, acessivel: true, dataHora: 0, dataHoraEntrega: 0 },  
+  { id: 9, formato: "padrao", status: false, acessivel: true, dataHora: 0, dataHoraEntrega: 0 },
 ];
 
 // função para reserva do armário, incluindo as regras.
