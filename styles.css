@@ -95,7 +95,8 @@
 }
 
 #message {
-  height: 180px;
+  margin-top: 13px;
+  height: 140px;
   width: 100%;
   font-family: 'Arimo', sans-serif;
   background: whitesmoke;
@@ -107,7 +108,7 @@
 .welcome-text {
   font-size: 22px;
   font-weight: bold;
-  margin-bottom: 2px;
+  margin-bottom: 7px;
 }
 
 .notification {
