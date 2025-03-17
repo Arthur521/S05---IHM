@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Simples</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -20,11 +21,11 @@
             <p class="welcome-text">Olá Arthur!</p>
             <div class="notification">
               <span class="icon">🔔</span>
-              <p>Você possui um armário reservado com entrega para hoje...</p>
+              <p class="notification-text">Você possui um armário reservado com entrega para hoje...</p>
             </div>
             <div class="notification">
               <span class="icon">📩</span>
-              <p>Você possui uma pendência no financeiro... </p>
+              <p class="notification-text">Você possui uma pendência no financeiro... </p>
             </div>
         </div>
         <div id="aulas">
@@ -64,38 +65,13 @@
               </div>
             </div>
         </div>          
-        <div id="noticias">
+        <div id="carousel-container">
             <div class="carousel">
-              <div class="slide active">
-                <img src="public/laptop-1.jpg" alt="Notícia 1">
-                <div class="text-overlay">
-                  <h2 class="title">Notebook ou Tablet: Qual o Melhor?</h2>
-                  <p class="subtitle">Descubra as vantagens e desvantagens de cada dispositivo para otimizar seus estudos.</p>
-                </div>
-              </div>
-              <div class="slide">
-                <img src="public/laptop-2.jpeg" alt="Notícia 2">
-                <div class="text-overlay">
-                  <h2 class="title">Dicas para Seu Notebook</h2>
-                  <p class="subtitle">Aprenda truques simples para evitar lentidão e aumentar a produtividade nos estudos.</p>
-                </div>
-              </div>
-              <div class="slide">
-                <img src="public/laptop-3.jpeg" alt="Notícia 3">
-                <div class="text-overlay">
-                  <h2 class="title">Os Melhores Notebooks</h2>
-                  <p class="subtitle">Confira a lista dos modelos mais recomendados para estudantes de diversas áreas.</p>
-                </div>
-              </div>
-            </div>
-            <div class="indicadores">
-              <div class="dot active"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
             </div>
         </div>          
     </section>
-    <script src="scripts/carousel.js"></script>
+    <script src="scripts/noticias.js" defer></script>
+    <script src="scripts/events.js"></script>
     <script src="scripts/darkMode.js" defer></script>
 </body>
 </html>
