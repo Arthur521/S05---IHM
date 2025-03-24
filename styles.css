@@ -223,18 +223,31 @@ p {
   overflow: hidden;
   background-color: white;
   border-radius: 10px;
-  margin: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1)
-
+  margin: auto;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px; /* Ajuste conforme necessário */
 }
 
 .carousel {
-  display: relative; /* mudaremos para flex posteriormente */
+  display: flex;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
 .card {
-  width: 100%; /* Melhorado */
+  width: 100%;
+  position: absolute;
   text-align: center;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.card.active {
+  opacity: 1;
+  position: relative;
 }
 
 .card img {
@@ -248,6 +261,22 @@ p {
   font-size: 15px;
   padding: 10px;
 }
+
+/* Botões de navegação */
+.prev-btn, .next-btn {
+  position: absolute;
+  transform: translateY(-45%);
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn { left: 5px; }
+.next-btn { right: 5px; }
+
 
 body {
   max-width: 414px; 
