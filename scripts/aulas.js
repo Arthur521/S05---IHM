@@ -14,10 +14,10 @@ function criarQuadros(jsonData) {
 
         let provaDisplay = a.prova_alert ? '' : 'display: none;';
 
-        let notaClasse = "nota-baixa"; // Padrão (nota baixa)
-        if (a.nota >= 7) {
+        let notaClasse = "nota-baixa";
+        if (a.nota >= 8) {
             notaClasse = "nota-alta";
-        } else if (a.nota >= 5) {
+        } else if (a.nota > 6) {
             notaClasse = "nota-media";
         }
 
