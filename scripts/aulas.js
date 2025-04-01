@@ -17,7 +17,7 @@ function criarQuadros(jsonData) {
         let notaClasse = "nota-baixa";
         if (a.nota >= 8) {
             notaClasse = "nota-alta";
-        } else if (a.nota > 6) {
+        } else if (a.nota >= 6) {
             notaClasse = "nota-media";
         }
 
