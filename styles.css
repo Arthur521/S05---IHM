@@ -1,3 +1,112 @@
+#modal-overlay {
+  display: none; /* escondido por padrão */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#modal-overlay.ativo {
+  display: flex;
+}
+
+#modal-content {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 300px;
+  font-family: 'Arimo', sans-serif;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+#modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#modal-content p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+#modal-content .botao-estagios {
+  margin-top: 15px;
+  width: 100%;
+}
+
+/* Botão de fechar */
+.fechar {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+}
+
+.fechar:hover {
+  color: #000;
+}
+
+/* 🌙 Dark Mode */
+body.dark-mode #modal-content {
+  background-color: #1f1f1f;
+  color: #eee;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode #modal-content p {
+  color: #eee;
+}
+
+.vaga-linha {
+  display: flex;
+  align-items: flex-start;
+  font-size: 18px;
+}
+
+.vaga-linha .material-symbols-outlined {
+  font-size: 30px;
+  color: #444;
+  margin-right: 30px;
+}
+
+.rotulo {
+  font-weight: bold;
+}
+
+.valor {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.botoes-modal {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.botao-estagios.recusar {
+  background-color: #eee;
+  color: #333;
+}
+
+/* Dark mode para .vaga-linha */
+body.dark-mode .vaga-linha .material-symbols-outlined {
+  color: #ccc;
+}
+
 #toggleDarkMode {
   background: none;
   border: none;
@@ -288,7 +397,7 @@ p {
 :root {
   --frequencia: #126ae2;
   --nota: #126ae2;
-  --prova: #126ae2;  
+  --prova: #126ae2;
 }
 
 .titulo_aula {
@@ -359,4 +468,28 @@ body {
   display: grid;
   gap: 4px;
   padding: 10px;
+}
+.estagios-container {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.botao-estagios {
+  background-color: #0069be;
+  color: white;
+  border: none;
+  width: 300px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: -16px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+}
+
+.botao-estagios:hover {
+  background-color: #0099ff;
 }

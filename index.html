@@ -14,29 +14,76 @@
         <img class="logo" src="public/icon_inatel.svg" alt="Logo 2">
         <button id="toggleDarkMode">
             <img class="logo" src="public/icon_dark.svg" alt="Logo 2">
-          </button>          
+        </button>
     </div>
     <section class="main">
         <div id="message">
             <p class="welcome-text">Olá Arthur!</p>
             <div class="notification">
-              <span class="icon">🔔</span>
-              <p class="notification-text">Você possui um armário reservado com entrega para hoje...</p>
+                <span class="icon">🔔</span>
+                <p class="notification-text">Você possui um armário reservado com entrega para hoje...</p>
             </div>
             <div class="notification">
-              <span class="icon">📩</span>
-              <p class="notification-text">Você possui uma pendência no financeiro... </p>
+                <span class="icon">📩</span>
+                <p class="notification-text">Você possui uma pendência no financeiro... </p>
             </div>
+            <div class="notification" onclick="abrirModal()">
+                <span class="icon">📄</span>
+                <p class="notification-text">Você aceitou uma oferta de estágio. Ver termos da proposta.</p>
+            </div>
+        </div>
+        <div class="estagios-container">
+            <button onclick="window.location.href='estagios.html'" class="botao-estagios">
+                🔍 Buscar Estágios
+            </button>
         </div>
         <div id="schedule-container"></div>
         <div id="carousel-container">
             <div class="carousel">
             </div>
-        </div>          
+        </div>
     </section>
+
+    <!-- Modal com os termos da proposta -->
+    <div id="modal-overlay" onclick="fecharModal(event)">
+        <div id="modal-content" onclick="event.stopPropagation()">
+            <span class="fechar" onclick="fecharModal()">&times;</span>
+            <h2>Termos da Proposta</h2>
+            <div class="vaga-linha">
+            <span class="material-symbols-outlined">work</span>
+            <div><span class="rotulo">Vaga:</span> <span class="valor">Analista de Dados</span></div>
+            </div>
+            <div class="vaga-linha">
+            <span class="material-symbols-outlined">domain</span>
+            <div><span class="rotulo">Empresa:</span> <span class="valor">Solutions Tech</span></div>
+            </div>
+            <div class="vaga-linha">
+            <span class="material-symbols-outlined">location_on</span>
+            <div><span class="rotulo">Local:</span> <span class="valor">Santa Rita do Sapucaí - MG</span></div>
+            </div>
+            <div class="vaga-linha">
+            <span class="material-symbols-outlined">payments</span>
+            <div><span class="rotulo">Bolsa:</span> <span class="valor">R$ 1.500,00</span></div>
+            </div>
+            <div class="vaga-linha">
+            <span class="material-symbols-outlined">description</span>
+            <div><span class="rotulo">Descrição:</span> <span class="valor">Análise de dados, dashboards e suporte a decisões estratégicas.</span></div>
+            </div>
+            <div class="vaga-linha">
+            <span class="material-symbols-outlined">call</span>
+            <div><span class="rotulo">Contato:</span> <span class="valor">(35) 99999-8888</span></div>
+            </div>
+            <div class="botoes-modal">
+                <button onclick="aceitarProposta()" class="botao-estagios">✅ Aceitar Termos</button>
+                <button onclick="recusarProposta()" class="botao-estagios recusar">❌ Recusar</button>
+            </div>
+        </div>
+    </div>
+
     <script src="scripts/aulas.js" defer></script>
     <script src="scripts/noticias.js" defer></script>
     <script src="scripts/events.js"></script>
     <script src="scripts/darkMode.js" defer></script>
+    <script src="scripts/modalTermos.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,451 @@
+.main button,
+.estagios-container button,
+.vaga-card button {
+  display: block;
+  margin: 10px auto;
+}
+
+:root {
+  --azul-principal: #0069be;
+  --azul-claro: #0099ff;
+  --cinza-claro: #f5f5f5;
+  --destaque: #126ae2;
+  --texto-escuro: #333;
+}
+
+body {
+  max-width: 414px;
+  min-height: 896px;
+  margin: 0 auto;
+  background-color: var(--cinza-claro);
+  font-family: 'Arimo', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabeçalho */
+#header {
+  height: 65px;
+  background: linear-gradient(to right, var(--azul-principal), var(--azul-claro));
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+}
+
+.logo {
+  height: 40px;
+  filter: invert(100%);
+}
+
+/* Botão de modo escuro */
+#toggleDarkMode {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--texto-escuro);
+  transition: color 0.3s;
+}
+
+/* Layout principal */
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+/* Modo escuro */
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-mode #header {
+  background: #1e1e1e;
+}
+
+.dark-mode .logo {
+  filter: invert(100%);
+}
+
+.dark-mode #toggleDarkMode {
+  color: #f5f5f5;
+}
+
+#modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+#modal-content {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 300px;
+  font-family: 'Arimo', sans-serif;
+}
+
+#modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#modal-content label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+#modal-content input[type="text"],
+#modal-content input[type="file"] {
+  width: 94%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: 'Arimo', sans-serif;
+}
+
+/* 🌙 Dark Mode */
+body.dark-mode #modal-content {
+  background-color: #1f1f1f;
+  color: #eee;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode #modal-content input[type="text"],
+body.dark-mode #modal-content input[type="file"] {
+  background-color: #2a2a2a;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+.comp-aula {
+  background-color: white; 
+  padding: 15px;
+  border-radius: 10px; 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 15px; 
+  max-width: 400px; 
+  border-left: 5px solid var(--prova); 
+}
+
+.info {
+  flex-direction: column;
+}
+
+.dark-mode .comp-aula {
+  background-color: #333; 
+  padding: 15px;
+  border-radius: 10px; 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 15px; 
+  max-width: 400px; 
+  border-left: 5px solid var(--prova); 
+}
+
+.botao-estagios {
+  background-color: #0069be;
+  color: white;
+  border: none;
+  width: 300px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: -16px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+}
+
+.botao-estagios:hover {
+  background-color: #0099ff;
+}
+
+.disciplina {
+  color: #0069be;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.detalhes {
+  font-size: 14px;
+  color: gray;
+  line-height: 2px;
+  margin-top: 1;
+}
+
+.welcome-text {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+#vaga-modal-content {
+  background-color: white;
+  padding: 25px 20px;
+  border-radius: 12px;
+  width: 100%;
+  height: 50%; /* ou altura fixa que preferir */
+  max-width: 320px;
+  font-family: 'Arimo', sans-serif;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+#vaga-modal-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: var(--azul-principal);
+}
+
+#vaga-detalhes-texto {
+  font-size: 14px;
+  line-height: 1.2;
+  margin-bottom: 0;
+  flex-grow: 1;  /* permite que esse conteúdo cresça e ocupe espaço */
+  overflow-y: auto; /* permite scroll se o conteúdo for grande */
+}
+
+
+.vaga-linha {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.vaga-linha span {
+  font-size: 18px;
+  color: var(--azul-principal);
+}
+
+.vaga-linha .rotulo {
+  font-weight: bold;
+  color: #555;
+  min-width: 80px;
+}
+
+.vaga-linha .valor {
+  color: #333;
+  flex: 1;
+}
+
+#vaga-modal-content .botoes-modal {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  justify-content: space-between;
+  /* fixar no final */
+  /* já garantido pelo flex-direction e flex-grow do conteúdo */
+}
+
+#vaga-modal-content .botao-estagios {
+  flex: 1;
+}
+
+#vaga-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+body.dark-mode #vaga-modal-content {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode #vaga-modal-content h2 {
+  color: #90caf9; /* azul mais claro no dark mode */
+}
+
+body.dark-mode .vaga-linha .rotulo {
+  color: #bbb;
+}
+
+body.dark-mode .vaga-linha .valor {
+  color: #eee;
+}
+
+body.dark-mode .vaga-linha span {
+  color: #90caf9;
+}
+
+.botoes-formulario {
+  display: flex;
+  justify-content: flex-end; /* ou center, se preferir centralizado */
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.campo-busca {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.campo-busca input {
+  padding: 12px 16px 12px 42px;
+  font-size: 16px;
+  width: 330px;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Arimo', sans-serif;
+}
+
+.campo-busca input:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 6px rgba(25, 118, 210, 0.4);
+}
+
+.lupa-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  color: #888;
+  pointer-events: none;
+}
+
+body.dark-mode .campo-busca input {
+  background-color: #1e1e1e;
+  color: #eee;
+  border: 2px solid #444;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .campo-busca input:focus {
+  border-color: #90caf9;
+  box-shadow: 0 0 6px rgba(144, 202, 249, 0.3);
+}
+
+body.dark-mode .lupa-icon {
+  color: #aaa;
+}
+
+#candidatura-modal-content {
+  background-color: white;
+  padding: 25px 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  max-height: 90vh;
+  font-family: 'Arimo', sans-serif;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+#candidatura-modal-content h2,
+#candidatura-modal-content h3 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: var(--azul-principal);
+}
+
+#candidatura-modal-content textarea,
+#candidatura-modal-content input[type="file"],
+#dados-aluno-revisao input {
+  width: 94%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: 'Arimo', sans-serif;
+  font-size: 14px;
+}
+
+#candidatura-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+body.dark-mode #candidatura-modal-content {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode #candidatura-modal-content h2,
+body.dark-mode #candidatura-modal-content h3 {
+  color: #90caf9;
+}
+
+body.dark-mode #candidatura-modal-content textarea,
+body.dark-mode #candidatura-modal-content input[type="file"],
+body.dark-mode #dados-aluno-revisao input {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+.filtro-tipo-vaga {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Arimo', sans-serif;
+}
+
+.filtro-tipo-vaga select {
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.botao-voltar {
+    background-color: #f44336;
+    color: white;
+    margin: 30px auto 10px;
+    display: block;
+    width: 180px;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.botao-voltar:hover {
+    background-color: #c62d22;
+
+}
